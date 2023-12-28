@@ -127,6 +127,7 @@ http://localhost:8081
 ### マイページ
 [http://localhost:8081/line/testlogin/{id}](http://localhost:8081/line/testlogin/1)
 ```
+検証ツールでスマホ画面状態にしてアクセスしてください。
 idには1~10の整数を指定
 ```
 
