@@ -1,0 +1,32 @@
+version: 0.2
+
+phases:
+  pre_build:
+    commands:
+      - n 16
+      ## DockerHub login
+      - echo Logging in to Docker Hub...
+      - echo $DOCKERHUB_PASS | docker login -u $DOCKERHUB_USER --password-stdin
+      - yarn --cwd src install
+      - yarn --cwd src prod
+      - aws ecr get-login-password --region ap-northeast-1 | docker login --username AWS --password-stdin $AWS_ID.dkr.ecr.ap-northeast-1.amazonaws.com
+      - COMMIT_HASH=$(echo $CODEBUILD_RESOLVED_SOURCE_VERSION | cut -c 1-7)
+      - IMAGE_TAG=${COMMIT_HASH:=latest}
+  build:
+    commands:
+      - aws s3 sync ./src/public $S3_URL
+      - docker build -t semi-php-fpm -f ECS-Dockerfile .
+      - docker tag semi-php-fpm:latest $AWS_ID.dkr.ecr.ap-northeast-1.amazonaws.com/semi-php-fpm:$IMAGE_TAG
+    # nginxの変更があった場合コメントアウトを外してください
+      - docker build --target=production -t semi-nginx ./docker/nginx/.
+      - docker tag semi-nginx:latest $AWS_ID.dkr.ecr.ap-northeast-1.amazonaws.com/semi-nginx:latest
+  post_build:
+    commands:
+      - docker push $AWS_ID.dkr.ecr.ap-northeast-1.amazonaws.com/semi-php-fpm:$IMAGE_TAG
+    # nginxの変更があった場合コメントアウトを外してください
+      - docker push $AWS_ID.dkr.ecr.ap-northeast-1.amazonaws.com/semi-nginx:latest
+      - printf '[{"name":"semi-php-fpm","imageUri":"%s"}]' $AWS_ID.dkr.ecr.$AWS_DEFAULT_REGION.amazonaws.com/semi-php-fpm:$IMAGE_TAG >  imagedefinitions.json
+
+artifacts:
+    files:
+      - imagedefinitions.json
