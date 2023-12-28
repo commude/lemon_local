@@ -19,9 +19,9 @@ class AdminTableSeeder extends Seeder
         //Super
         //1
         $superAdmin = Admin::create([
-            'name' => 'superadmin1',
-            'email' => 'daisuke.homan@pr.cri.co.jp',
-            'password' => '$2y$10$60odukZadmC8N3mFIdA19.dxZ0D50PrrB2b.t4yPU8qjWXlmYRqmC', // mmi2R,fX1+
+            'name' => 'commude',
+            'email' => 'commude@commude.com',
+            'password' => '$2y$10$.MP2jr5EFKdgK7wu6rMHVOiAcIGUPOT80DO1PE7mkH2Vol5m0KkdK', // mmi2R,fX1+
         ]);
         $superAdmin->assignRole(AdminType::SUPER_LEVEL);
         //2
