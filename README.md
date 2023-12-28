@@ -124,7 +124,8 @@ http://localhost:8081
 ### トップページ
 [http://localhost:8081](http://localhost:8081)
 
-[http://localhost:8081/line/testlogin/{id}]
+### マイページ
+[http://localhost:8081/line/testlogin/{id}](http://localhost:8081/line/testlogin/1)
 ```
 idには1~10の整数を指定
 ```
