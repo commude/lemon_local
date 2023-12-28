@@ -1,3 +1,7 @@
+#これは何
+lemon_sour_deployレポジトリの中身をsemi_close_packageに組み込んだものです。
+このREAD.mdの以下はsemi_close_packageのものとなります
+
 # semi_close_package
 semi_close_package
 
