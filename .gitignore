@@ -1,0 +1,4 @@
+.idea/
+src/public/asset
+.DS_Store
+/environments/local/s3/
