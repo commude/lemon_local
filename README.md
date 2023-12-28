@@ -121,15 +121,16 @@ http://localhost:8081
 
 ## サイトにアクセス
 
-### user
+### トップページ
 [http://localhost:8081](http://localhost:8081)
+
+[http://localhost:8081/line/testlogin/{id}]
 ```
-user : undecided(users Table の email)
-password : undecided（password）
+idには1~10の整数を指定
 ```
 
 ### admin
-[http://localhost:8081/SCP_Cmd_2022-11/login](http://localhost:8081/SCP_Cmd_2022-11/login)
+[http://localhost:8081/cmd/login](http://localhost:8081/cmd/login)
 
 ```
 user_id：
