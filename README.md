@@ -1,18 +1,13 @@
-#これは何
+# これは何
 lemon_sour_deployレポジトリの中身をsemi_close_packageに組み込んだものです。
-このREAD.mdの以下はsemi_close_packageのものとなります
-
-# semi_close_package
-semi_close_package
 
 ## Requirements
-- PHP 8.1.6
+- PHP 7.x
 - Any database system
 - Composer 2.x
 - Npm 7.21 (or anything near) & yarn
 - Other PHP extension
-- Laravel 9.29
-- Authenticated:breeze
+- Laravel 7.3
 
 ## Environment
 - Docker & Docker Compose
@@ -21,71 +16,20 @@ semi_close_package
 - MySQL 5.7
 - mailhog
 
-## Directory Structure
-
-```bash
-├─docker (Docker Image builder)
-│  ├─nginx
-│  │  ├─conf
-│  │  │   ├─conf.d
-│  │  │   │   ├─default-local.conf
-│  │  │   │   └─dedault-production.conf
-│  │  │   └─nginx.conf
-│  │  └─dockerfile
-│  │
-│  └─php-fpm
-│     ├─conf
-│     │   └─php.ini 
-│     └─dockerfile 
-│      
-├─environments (Docker Composer environments)
-│  ├─local
-│  └─stg 
-│
-└─src (Laravel App)
-    ├─app
-    ├─bootstrap
-    ├─config
-    ├─database
-    ├─node_modules
-    ├─public
-    ├─resources
-    ├─routes
-    ├─storag
-    ├─tests
-    ├─vendor
-    ├─.env.example
-    ├─artisan
-    ├─composer.json
-    ├─composer.lock
-    ├─package-lock.json
-    ├─package.json
-    ├─phpunit.xml
-    ├─README.md
-    ├─server.php
-    └─webpack.mix.js
-```
-
 ## Setup(dockerイメージ構築)
-1. Build docker image first.
+1. Create Containers（コンテナ構築）
 
 ```bash
 cd environments/local
-docker-compose build
-```
-
-2. Create Containers（コンテナ構築）
-
-```bash
 docker-compose up -d
 ```
 
 3. Entering the Container&Install libraries（コンテナの中に入ってライブラのリインストール）
 ```bash
-docker exec -it scp.local.php-fpm bash
+docker-compose exec php-fpm bash
 ```
 
-→local %  →→　　bash-4.2#
+→local %  →→　　bash-5.1#
 
 ```bash
 composer install
@@ -112,7 +56,7 @@ MIX_ASSET_URL=http://localhost:8081
 
 ADMIN_PREFIX=
 ↓
-ADMIN_PREFIX=SCP_Cmd_2022-11
+ADMIN_PREFIX=cmd
 
 
 
@@ -126,7 +70,7 @@ DB_PASSWORD=
 DB_CONNECTION=mysql
 DB_HOST=mysql
 DB_PORT=3306
-DB_DATABASE=scp.local_db
+DB_DATABASE=laravel_db
 DB_USERNAME=default
 DB_PASSWORD=secret
 
@@ -156,7 +100,7 @@ Out of the container
 ```bash
 exit
 ```
-bash-4.2# →→ local % 
+bash-5.1# →→ local % 
 
 
 ```bash
