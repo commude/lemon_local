@@ -1,0 +1,325 @@
+@charset "utf-8";
+/*管理-ユーザー一覧：レイアウト*/
+body {
+    font-size: 1rem;
+    margin: 0 auto;
+    min-height: 100vh;
+    display: grid;
+    grid-template:
+        "... ...... ...... ..."
+        "... left   search ..."
+        "... left   ...... ..."
+        "... left   status ..."
+        "... left   ...... ..."
+        "... left   list   ..."
+        "... left   paging ..." 120px
+        "... ...... ...... ..."
+        / auto 240px minmax(760px, 100%) auto;
+}
+
+/*管理-ユーザー一覧：左側メニュー*/
+left {
+    grid-area: left;
+    background-color: #171A23;
+    line-height: 0px;
+}
+left ul {
+	list-style: none;
+	margin: 0px;
+	padding: 0px;
+}
+/*管理-ユーザー一覧：右側上部検索条件入力部*/
+search {
+    grid-area: search;
+}
+/*ページタイトル*/
+.admin_user_header{
+	position: relative;
+	overflow: hidden;
+}
+.title_right_top {
+	float: left;
+	margin: 0 0 0 20px;
+	padding: 0;
+	line-height: 60px;
+	text-align: left;
+	color: #000000;
+	font-size: Large;
+	font-weight: 700;
+}
+
+.logout_btn{
+	float: right;
+	display: block;
+	margin: 0 0 0 0;
+	padding: 0 25px;
+	line-height: 60px;
+	border-left: solid 1px #E5E9EB;
+}
+.logout_btn:hover{
+	opacity: 0.8;
+}
+.logout_btn img{
+	vertical-align: middle;
+}
+/*デコ線*/
+.hr1 {
+	border-width: 1px 0px 0px 0px;
+	border-style: solid;
+	border-color: #E5E9EB;
+	height: 1px;
+	margin-top: 0;
+	margin-bottom: 20px;
+}
+.hr2 {
+	border-width: 1px 0px 0px 0px;
+	border-style: solid;
+	border-color: #E5E9EB;
+	height: 1px;
+	margin-left: 20px;
+	margin-right: 10px;
+	margin-bottom: 20px;
+}
+.hr3 {
+	box-shadow: inset 0 3px 3px -3px rgba(0,0,0,0.5);
+	border-width: 1px 0px 0px 0px;
+	border-style: solid;
+	border-color: #E5E9EB;
+	height: 3px;
+	margin-top: 10px;
+	margin-bottom: 20px;
+}
+
+#box_user_search table{
+	max-width: 1000px;
+	margin: 0 auto;
+}
+
+/*入力欄*/
+.lable_input input:focus {
+	outline: none;
+	box-shadow: inset 1px 1px 2px 0 #c9c9c9;
+}
+lable input {
+	box-sizing: border-box;
+	width: auto;
+	padding: 12px 5px;
+	transition: 0.3s;
+	letter-spacing: 1px;
+	color: #aaaaaa;
+	border: 1px solid #ffffff;
+	box-shadow: 1px 1px 2px 0 #707070 inset;
+	border-radius: 4px;
+	background-color: #F6F6F7;
+}
+lable input.err {
+	border: 1px solid red;
+}
+select::-ms-expand {
+	display: none;
+	}
+select.user_select {
+	box-sizing: border-box;
+	width: auto;
+	padding: 10px 5px;
+	transition: 0.3s;
+	letter-spacing: 1px;
+	color: #808080;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	background-image: url("../images/admin_sellect_icon_arrow.svg");
+	background-repeat: no-repeat;
+	background-size: 12px 10px;
+	background-position: right 10px center;
+	background-color: #eee;
+}
+.btn:hover{
+	opacity: 0.8;
+}
+/*テキスト*/
+.title_search_01 {
+	text-align: left;
+	color: #6d6d6d;
+	font-size: small;
+	margin-top: 20px;
+	margin-left: 20px;
+	margin-right: 10px;
+	margin-bottom: 20px;
+}
+.title_search_02 {
+	text-align: left;
+	color: #6d6d6d;
+	font-size: xx-small;
+}
+.title_search_02.err{
+	color: red;
+}
+.user_tilde {
+	color: #6d6d6d;
+	margin-left: 5px;
+	margin-right: 5px;
+}
+/*テーブル整形*/
+.user_search_td_01 {
+	vertical-align: top;
+	height: 40px;
+}
+.user_search_td_02 {
+	text-align: right;
+	padding-right: 10px;
+}
+/*検索ステータス*/
+status {
+    grid-area: status;
+	box-shadow: inset 0 3px 3px -1px rgba(212,214,216,1);
+    background-color: #F6F8F9;
+	margin-top: 20px;
+}
+.box_status_main {
+	border: 1px solid #E4E8EA;
+	border-radius: 4px;
+	height: 50px;
+	margin: 20px;
+	display: flex;
+	flex-flow: row wrap;
+	align-content: stretch;
+}
+.box_status_left {
+	border-radius: 4px 0px 0px 4px;
+	background-color: #787F89;
+	width: 70px;
+	font-size: x-small;
+	color: #ffffff;
+	letter-spacing: 0.1rem;
+	/** 以下中央揃え**/
+	display: -webkit-box;
+	display: -ms-flexbox;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+	-webkit-box-pack: center;
+	-ms-flex-pack: center;
+	justify-content: center;
+}
+.box_status_right {
+	width: calc(100% - 70px);
+	/** 以下中央揃え**/
+	display: -webkit-box;
+	display: -ms-flexbox;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+	-ms-flex-pack: center;
+	justify-content: center;
+}
+.status_text {
+	font-weight: 700;
+	font-size: small;
+	color: #666C75;
+	padding-left: 20px;
+}
+/*一覧（検索結果）*/
+list {
+    grid-area: list;
+    background-color: #F6F8F9;
+}
+#list_header {
+	height: 30px;
+	display: flex;
+	justify-content: space-between;
+	align-content: stretch;
+	margin-bottom: 20px;
+}
+.list_num {
+	margin-left: 20px;
+}
+.list_btn_csv {
+	margin-right: 20px;
+}
+#list_result {
+	margin: 0px 20px 20px 20px;
+}
+#list_result table {
+	border: 1px solid #E8ECEE;
+	border-collapse: separate;
+	border-spacing: 0;
+	border-radius: 6px;
+	color: #888888;
+}
+#list_result th {
+	height: 60px;
+	width: 100px;
+	font-weight: 700;
+	font-size: small;
+	letter-spacing: 0.1rem;
+	background-image: url("../images/admin_user_icon_triangle.png");
+	background-repeat: no-repeat;
+	background-size: 12px 8px;
+	background-position: right 10px center;
+	border: 1px solid #E8ECEE;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	padding-right: 15px;
+}
+#list_result th.top {
+	background-image: url("../images/admin_user_icon_triangle_top.png");
+}
+#list_result td{
+	height: 60px;
+	width: 100px;
+	border: 1px solid #E8ECEE;
+	background: white;
+	font-size: x-small;
+	text-align: center;
+  }
+/*ページング*/
+paging {
+    grid-area: paging;
+    background-color: #F6F8F9;
+	padding: 0px 20px 50px 20px;
+	display: flex;
+	flex-flow: row nowrap;
+	align-content: stretch;
+	justify-content: center;
+}
+paging a{
+	text-decoration: none;
+}
+paging a:link{
+	color: #242A34;
+}
+paging a:visited{
+	color: #8F8F90;
+}
+paging a:hover{
+	color: #B22222;
+	text-decoration: none;
+}
+.paging_prev {
+	font-size: small;
+	font-weight: 700;
+	color: #242A34;
+	margin-right: 100px;
+}
+num {
+	width: 30px;
+	height: 30px;
+
+}
+.paging_num li {
+	display: inline;
+	padding:7px 12px;
+	border:1px #F6F8F9 solid;color:#242A34;
+	border-radius: 5px / 5px;
+}
+.paging_num .this {
+	padding:5px 10px;
+	border:2px #dddddd solid;color:#8F8F90;
+	border-radius: 5px / 5px;
+}
+.paging_next {
+	font-size: small;
+	font-weight: 700;
+	color: #242A34;
+	margin-left: 100px;
+}

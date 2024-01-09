@@ -1,0 +1,31 @@
+/*
+#scan_area.viewport {
+    height: 270px;
+    width: 320px;
+}
+
+#scan_area.viewport canvas, video {
+    float: left;
+    height: 270px;
+    width: 320px;
+}
+
+#scan_area.viewport canvas.drawingBuffer, video.drawingBuffer {
+   margin-left: -320px;
+}
+*/
+
+canvas {
+    display: none;
+}
+
+#scan-area.viewport video {
+    transform: translateX(-20vw) translateY(-30vw);
+    width: 120vw;
+}
+
+#scan-area.viewport canvas {
+    transform: translateX(-20vw) translateY(-200vw);
+}
+
+

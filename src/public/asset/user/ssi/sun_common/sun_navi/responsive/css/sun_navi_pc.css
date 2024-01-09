@@ -1,0 +1,1205 @@
+@charset "utf-8";
+
+
+/* reset
+==================================== */
+html,
+body{
+	margin:0;
+	padding:0;
+	border:0;
+}
+body.modal_on {
+  height: 100vh;
+  overflow-y: hidden;
+  padding-right: 15px; /* 幅のリフローを避ける */
+}
+
+
+#suntoryCommonHeader,
+#suntoryCommonFooter{
+	margin:0;
+	padding:0;
+	border:0;
+	outline:0;
+	line-height:1;
+	background:transparent;
+	-webkit-text-size-adjust:none;
+	background-color:#fff;
+	text-align:left;
+}
+
+#suntoryCommonHeader {
+	border-bottom: 1px solid #d1dee1;
+} 
+
+
+/* 旧CSS suntory_gn_utf8.css suntory_gn.css 対応
+------------------------------*/
+#suntoryCommonHeader,
+#suntoryCommonFooter{
+	width:100% !important;
+	height:auto !important;
+	position:static !important;
+}
+
+
+
+#suntoryCommonHeader h1,#suntoryCommonHeader h2,#suntoryCommonHeader h3,#suntoryCommonHeader h4,#suntoryCommonHeader h5,#suntoryCommonHeader h6,#suntoryCommonHeader p,#suntoryCommonHeader ol,#suntoryCommonHeader ul,#suntoryCommonHeader li,#suntoryCommonHeader dl,#suntoryCommonHeader dt,#suntoryCommonHeader dd,#suntoryCommonHeader table,#suntoryCommonHeader th,#suntoryCommonHeader td,#suntoryCommonHeader form,#suntoryCommonHeader br,#suntoryCommonHeader address,#suntoryCommonHeader button,#suntoryCommonHeader span,#suntoryCommonHeader em,#suntoryCommonHeader i,#suntoryCommonHeader a,#suntoryCommonHeader input,#suntoryCommonHeader button,
+#suntoryCommonFooter h1,#suntoryCommonFooter h2,#suntoryCommonFooter h3,#suntoryCommonFooter h4,#suntoryCommonFooter h5,#suntoryCommonFooter h6,#suntoryCommonFooter p,#suntoryCommonFooter ol,#suntoryCommonFooter ul,#suntoryCommonFooter li,#suntoryCommonFooter dl,#suntoryCommonFooter dt,#suntoryCommonFooter dd,#suntoryCommonFooter table,#suntoryCommonFooter th,#suntoryCommonFooter td,#suntoryCommonFooter form,#suntoryCommonFooter br,#suntoryCommonFooter address,#suntoryCommonFooter button,#suntoryCommonFooter span,#suntoryCommonFooter em,#suntoryCommonFooter i,#suntoryCommonFooter a,#suntoryCommonFooter input,#suntoryCommonFooter button{
+	margin:0;
+	padding:0;
+	border:0;
+	font:inherit;
+	font-size:100%;
+	font-style:normal;
+	font-family: "ヒラギノ角ゴ W3", "Hiragino Kaku Gothic Pro","メイリオ", Meiryo, sans-serif;
+	color: #000;
+	line-height:1;
+	vertical-align:baseline;
+	outline:none;
+	box-sizing:border-box;
+	-webkit-text-size-adjust:100%;
+	-webkit-font-smoothing:antialiased;
+	background-color:transparent;
+	-webkit-touch-callout:none;
+	-webkit-tap-highlight-color:rgba(0,0,0,0);
+}
+
+#suntoryCommonHeader table,
+#suntoryCommonFooter table{
+	border-collapse:collapse;
+	text-align:left;
+}
+
+#suntoryCommonHeader input,
+#suntoryCommonFooter input{
+	vertical-align:middle;
+}
+
+#suntoryCommonHeader ol,#suntoryCommonHeader ul,#suntoryCommonHeader li,
+#suntoryCommonFooter ol,#suntoryCommonFooter ul,#suntoryCommonFooter li{
+	list-style:none;
+}
+
+#suntoryCommonHeader a,
+#suntoryCommonFooter a,
+#suntoryCommonHeader input,
+#suntoryCommonFooter input,
+#suntoryCommonHeader button,
+#suntoryCommonFooter button{
+	cursor:pointer;
+	text-decoration:none;
+}
+
+#suntoryCommonHeader img,
+#suntoryCommonFooter img{
+	-ms-interpolation-mode:bicubic;
+	border:0;
+}
+
+/* #suntoryCommonHd #gn_block_top a.#to_contents
+==================================== */
+#suntoryCommonHd #gn_block_top a#to_contents{
+	display:block;
+	width:0px;
+	height:0px;
+	text-indent:100%;
+	white-space:nowrap;
+	overflow:hidden;
+	font-size:0;
+	line-height:0;
+}
+
+
+/* PC_NONE
+==================================== */
+#suntoryCommonHd br.br_sp,
+#suntoryCommonFt br.br_sp {
+	display:none;
+}
+
+
+/* rwd
+======================================================================== */
+#suntoryCommonHeader,
+#suntoryCommonFooter{
+	margin:0 auto;
+	text-align:center;
+}
+#suntoryCommonHd,
+#suntoryCommonHd_in,
+#suntoryCommonHd_01,
+#suntoryCommonHd_02,
+#suntoryCommonFt,
+#suntoryCommonFt_in{
+	margin:0 auto;
+	text-align:left;
+}
+
+/*
+#suntoryCommonHd,
+#suntoryCommonFt{
+	width:100%;
+	margin:0 auto;
+}
+
+#suntoryCommonHd_in,
+#suntoryCommonHd_01,
+#suntoryCommonHd_02,
+#suntoryCommonFt_in{
+	width:960px;
+	margin:0 auto;
+	text-align:left;
+}
+
+@media only screen and (min-width:961px){
+	#suntoryCommonHd,
+	#suntoryCommonFt {max-width:1164px;}
+
+	#suntoryCommonHd_in,
+	#suntoryCommonHd_01,
+	#suntoryCommonHd_02,
+	#suntoryCommonFt_in{width:100%;}
+}
+*/
+
+#suntoryCommonHd,
+#suntoryCommonHd_in,
+#suntoryCommonHd_01,
+#suntoryCommonHd_02,
+#suntoryCommonFt,
+#suntoryCommonFt_in{
+	width:1164px;
+}
+
+@media screen and (min-width:961px) and ( max-width:1164px) {
+#suntoryCommonHd,
+#suntoryCommonHd_in,
+#suntoryCommonHd_01,
+#suntoryCommonHd_02,
+#suntoryCommonFt,
+#suntoryCommonFt_in{
+	width:100%;
+}
+}
+
+@media screen and (max-width:960px) { 
+#suntoryCommonHd,
+#suntoryCommonHd_in,
+#suntoryCommonHd_01,
+#suntoryCommonHd_02,
+#suntoryCommonFt,
+#suntoryCommonFt_in{
+	width:960px;
+}
+}
+
+
+/* #suntoryCommonHd_01
+============================================================ */
+#suntoryCommonHd_01 {
+	height: 54px;
+}
+
+#suntoryCommonHd_01 h1{
+	float:left;
+	width: 140px;
+	height: 54px;
+	margin: 0 0 0 10px;
+}
+
+#suntoryCommonHd_01 h1 a{
+	display:block;
+	width: 140px;
+	height: inherit;
+	text-indent: -9999px;
+	background:url(//www.suntory.co.jp/sun_common/sun_navi/responsive/img/suntory_logo.png) center left no-repeat;
+	background-size: 100% auto;
+}
+
+/* #suntoryCommonHd_01_menu
+============================================================ */
+#suntoryCommonHd_menu {
+	float: right;
+	margin-right: 7px;
+}
+#suntoryCommonHd_menu ul {
+	float: left;
+}
+#suntoryCommonHd_menu ul li {
+    display: block;
+    margin-left: 40px;
+    float: left;
+}
+#suntoryCommonHd_menu ul li:first-child {
+    margin-left: 0;
+}
+#suntoryCommonHd_menu ul li a {
+	height: 54px;
+    display: block;
+	font-size: 16px;
+	font-weight: bold;
+	line-height: 54px;
+	color: #000;
+}
+#suntoryCommonHd_menu ul li a:hover,
+#suntoryCommonHd_menu ul li.btn_06:hover{
+	color: #007694;
+	cursor: pointer;
+	border-bottom: 4px solid #5bc2dc;
+}
+#suntoryCommonHd_menu ul li.btn_06 {
+	height: 54px;
+    display: block;
+	font-size: 16px;
+	font-weight: bold;
+	line-height: 54px;
+	padding-right: 20px;
+    position: relative;
+}
+
+#suntoryCommonHd_menu ul li.btn_06 span {
+    width: 5px;
+    height: 5px;
+    border-radius: 1px;
+    background: #000;
+    box-shadow: 7px 0 rgba(0,0,0,1), 0 7px rgba(0,0,0,1), 7px 7px rgba(0,0,0,1);
+    display: inline-block;
+    margin-left: 8px;
+    position: absolute;
+    top: 20px;
+    margin: auto;
+    right: 8px;
+}
+
+body#top.suntory_top_page #suntoryCommonHd_menu ul li.btn_06 span {
+    top: 25px;
+}
+
+#suntoryCommonHd_menu ul li.btn_06:hover span {
+    background: #007694;
+	box-shadow: 7px 0 rgba(0,118,148,1), 0 7px rgba(0,118,148,1), 7px 7px rgba(0,118,148,1);
+}
+
+#suntoryCommonHeader.suntory_cmn_hd_01 ul#suntoryCommonHd_menu_01 li.btn_01 a,
+#suntoryCommonHeader.suntory_cmn_hd_02 ul#suntoryCommonHd_menu_01 li.btn_02 a,
+#suntoryCommonHeader.suntory_cmn_hd_05 ul#suntoryCommonHd_menu_01 li.btn_03 a,
+#suntoryCommonHeader.suntory_cmn_hd_06 ul#suntoryCommonHd_menu_01 li.btn_04 a,
+#suntoryCommonHeader.suntory_cmn_hd_07 ul#suntoryCommonHd_menu_01 li.btn_05 a,
+#suntoryCommonHd_menu_pc ul li a.hover {
+	color: #007694;
+	cursor: pointer;
+	border-bottom: 4px solid #5bc2dc; 
+}
+
+
+
+/* top page special #suntoryCommonHd_01
+============================================================ */
+body#top.suntory_top_page #suntoryCommonHd_01 {height:64px;}
+body#top.suntory_top_page #suntoryCommonHd_01 h1{margin:64px;}
+
+/* top page special #suntoryCommonHd_01_menu
+============================================================ */
+body#top.suntory_top_page #suntoryCommonHd_menu ul li a,
+body#top.suntory_top_page #suntoryCommonHd_menu ul li.btn_06 {
+	height: 64px; line-height: 64px;
+}
+
+
+/* #suntoryCommonHd_02_menu
+======================================================================== */
+
+/* div
+======================== */
+#suntoryCommonHd_02_overlay {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 2147483647;
+	display: none;
+	background: url(//www.suntory.co.jp/sun_common/sun_navi/responsive/img/submenu_bg_pc.png) top center no-repeat;
+	background-size: 100% auto;
+	background-color: #021e2b;
+	overflow: scroll;
+}
+#suntoryCommonHd_02_top_border {
+	position: absolute;
+	left: 0;
+	top: 64px;
+	width: 100%;
+	border-bottom: 1px solid #86949f;
+}
+#suntoryCommonHd_02_wrap {
+	width: 1440px;
+	margin: 0 auto;
+}
+#suntoryCommonHd_02_wrap #suntoryCommonHd_submenu a {
+	color: #fff;
+}
+#suntoryCommonHd_02_wrap #suntoryCommonHd_submenu_foot_sp {
+	display: none;
+}
+#suntoryCommonHd_02_overlay .suntoryCommonHd_submenu_foot {
+	/*display: none;*/
+    width: 100%;
+    text-align: center;
+    border-top: 1px solid #86949f;
+}
+#suntoryCommonHd_02_overlay .suntoryCommonHd_submenu_foot p.suntoryCommonHd_submenu_close {
+    margin: 23px auto;
+    display: inline-block;
+    float: none;
+}
+
+#suntoryCommonHd_submenu {
+	width: 100%;
+}
+
+/* head
+======================== */
+#suntoryCommonHd_submenu #suntoryCommonHd_submenu_head {
+	width: 100%;
+	height: 64px;
+}
+
+/* head-logo
+======================== */
+#suntoryCommonHd_submenu #suntoryCommonHd_submenu_logo {
+	width: 140px;
+	height: 20px;
+	margin: 22px 0;
+	float: left;
+}
+#suntoryCommonHd_submenu #suntoryCommonHd_submenu_logo a {
+	width: 140px;
+	height: 20px;
+	display: block;
+	background: url(//www.suntory.co.jp/sun_common/sun_navi/responsive/img/submenu_logo.png) top center no-repeat;
+	background-size: 140px 20px;
+	text-indent: -9999px;
+}
+
+/* head-search
+======================== */
+#suntoryCommonHd_submenu #suntoryCommonHd_submenu_search{
+	width: 620px;
+	height: 46px;
+	margin: 9px 0  9px  95px;
+	float: left;
+	background:#fff;
+	border-radius: 23px;
+	position:relative;
+	box-sizing:content-box;
+}
+
+#suntoryCommonHd_submenu #suntoryCommonHd_submenu_search form {
+	position: relative;	
+}
+#suntoryCommonHd_submenu #suntoryCommonHd_submenu_search form span.glass {
+	position: absolute;
+    display: block;
+    top: 12px;
+    left: 14px;
+    width: 16px;
+    height: 16px;
+    border-radius: 16px;
+    border: 3px solid #5bc2dc;
+    z-index: 15;
+}
+#suntoryCommonHd_submenu #suntoryCommonHd_submenu_search form span.glass:after {
+	position: absolute;
+    display: block;
+    content: "";
+    top: 50%;
+    left: 65%;
+    width: 80%;
+    height: 25%;
+    background: #4eb0c9;
+    margin: 7px 0 0 3px;
+    transform: rotate(45deg);
+}
+
+#suntoryCommonHd_submenu #suntoryCommonHd_submenu_search form input[type="submit"]{
+	position:absolute;
+	top:0;
+	right:0;
+	display:block;
+	width:70px;
+	height:46px;
+	line-height: 46px;
+	font-size: 16px;
+	font-weight: bold;
+	color: #007694;
+	cursor:pointer;
+	border-radius: 0 23px 23px 0;
+}
+#suntoryCommonHd_submenu #suntoryCommonHd_submenu_search form input[type="submit"]:hover {
+	color: #025b71;
+}
+
+
+#suntoryCommonHd_submenu #suntoryCommonHd_submenu_search input[type="text"]{
+	position:absolute;
+	top:0;
+	left:0;
+	width:505px;
+	font-size:16px;
+	background:#fff;
+	height:46px;
+	line-height:46px;
+	color:#707070;
+	padding:0 0 0 45px;
+	vertical-align:middle;
+	cursor:text;    border-radius: 23px 0 0 23px;
+}
+
+
+/* head-mypage,close
+======================== */
+#suntoryCommonHd_submenu #suntoryCommonHd_submenu_head_right {
+	float: right;
+}
+#suntoryCommonHd_submenu #suntoryCommonHd_submenu_mypage {
+	width: 118px;
+    height: 30px;
+    margin: 16px 23px 16px 0;
+    float: left;
+}
+#suntoryCommonHd_submenu #suntoryCommonHd_submenu_mypage a {
+	width: 120px;
+    height: 28px;
+    display: block;
+    line-height: 28px;
+    font-size: 14px;
+    font-weight: bold;
+    position: relative;
+    padding-left: 15px;
+    background-color: #007694;
+    border: 1px solid #d1dee1;
+    border-radius: 16px;
+}
+#suntoryCommonHd_submenu #suntoryCommonHd_submenu_mypage a:hover {
+    background-color: #025b71;
+}
+#suntoryCommonHd_submenu #suntoryCommonHd_submenu_mypage a:after {
+	content: "";
+    vertical-align: middle;
+    position: absolute;
+    width: .4em;
+    height: .4em;
+    margin: auto;
+    border-top: 2px solid #fff;
+    border-right: 2px solid #fff;
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+    top: 9.5px;
+    right: 20px;
+	display: inline;
+}
+
+#suntoryCommonHd_02_overlay .suntoryCommonHd_submenu_close {
+    height: 20px;
+    line-height: 20px;
+    padding-right: 16px;
+    float: right;
+    margin: 22px 0;
+	font-size: 16px;
+    color: #fff;
+}
+
+#suntoryCommonHd_02_overlay  .suntoryCommonHd_submenu_close:hover{
+	cursor: pointer;
+	font-weight: bold;
+}
+
+#suntoryCommonHd_02_overlay  .suntoryCommonHd_submenu_close span.suntoryCommonHd_submenu_close_icon {
+	display: block;
+    width: 20px;
+    height: 20px;
+    position: relative;
+    cursor: pointer;
+    float: right;
+    margin-left: 3px;
+}
+#suntoryCommonHd_02_overlay  .suntoryCommonHd_submenu_close span.suntoryCommonHd_submenu_close_icon span:before,
+#suntoryCommonHd_02_overlay  .suntoryCommonHd_submenu_close span.suntoryCommonHd_submenu_close_icon span:after {
+  display: block;
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 84%;
+  height: 12%;
+  margin: -8% 0 0 -42%;
+  background: #fff;
+}
+#suntoryCommonHd_02_overlay  .suntoryCommonHd_submenu_close:hover span.suntoryCommonHd_submenu_close_icon span:before,
+#suntoryCommonHd_02_overlay  .suntoryCommonHd_submenu_close:hover span.suntoryCommonHd_submenu_close_icon span:after {
+  height: 15%;
+}
+#suntoryCommonHd_02_overlay  .suntoryCommonHd_submenu_close span.suntoryCommonHd_submenu_close_icon span:before {
+  transform: rotate(-45deg);
+}
+#suntoryCommonHd_02_overlay  .suntoryCommonHd_submenu_close span.suntoryCommonHd_submenu_close_icon span:after {
+  transform: rotate(45deg);
+}
+
+
+
+/* link list
+======================== */
+#suntoryCommonHd_submenu #suntoryCommonHd_submenu_list {
+	width: 100%;
+	margin-top: 80px;
+	height: 600px;
+	overflow: hidden;
+}
+
+/* link list - list1
+======================== */
+#suntoryCommonHd_submenu #suntoryCommonHd_submenu_list1 {
+	width: 920px;
+	float: left;
+	position: relative;
+}
+#suntoryCommonHd_submenu #suntoryCommonHd_submenu_list1 li {
+	width: 305px;
+	padding: 0 0 30px 0;
+	font-size: 24px;
+	color: #fff;
+	display: block;
+	line-height: 120%;
+}
+#suntoryCommonHd_submenu #suntoryCommonHd_submenu_list1 li a {
+	font-size: 24px;
+	color: #fff;
+	position: relative;
+	/*display: block;*/
+	line-height: 120%;
+}
+ 
+#suntoryCommonHd_submenu #suntoryCommonHd_submenu_list1 li a:hover {
+	font-weight: bold;
+}
+
+
+#suntoryCommonHd_submenu #suntoryCommonHd_submenu_list1 li div,
+#suntoryCommonHd_submenu #suntoryCommonHd_submenu_list1 li.suntoryCommonHd_submenu_sublist_notopen div {
+	font-weight: normal;
+	color: #fff;
+	position:relative;
+}
+#suntoryCommonHd_submenu #suntoryCommonHd_submenu_list1 li:hover,
+#suntoryCommonHd_submenu #suntoryCommonHd_submenu_list1 li.suntoryCommonHd_submenu_sublist_notopen:hover div {
+	font-weight: bold;
+	color: #fff;
+}
+#suntoryCommonHd_submenu #suntoryCommonHd_submenu_list1 li.suntoryCommonHd_submenu_sublist_opened div,
+#suntoryCommonHd_submenu #suntoryCommonHd_submenu_list1 li.suntoryCommonHd_submenu_sublist_opened:hover div {
+	font-weight: bold;
+	color: #fef501;	
+}
+
+
+#suntoryCommonHd_submenu #suntoryCommonHd_submenu_list1 li span.arrow {
+	position: absolute;
+	top: 5px;
+	right: 0;
+	width: 0;
+	height: 0;
+	border-style: solid;
+	border-width: 6.5px 0 6.5px 7px;
+	border-color: transparent transparent transparent #778693;
+}
+#suntoryCommonHd_submenu #suntoryCommonHd_submenu_list1 li.suntoryCommonHd_submenu_sublist_notopen span.arrow {
+	border-color: transparent transparent transparent #778693;
+}
+#suntoryCommonHd_submenu #suntoryCommonHd_submenu_list1 li:hover span.arrow,
+#suntoryCommonHd_submenu #suntoryCommonHd_submenu_list1 li.suntoryCommonHd_submenu_sublist_notopen:hover span.arrow{
+	border-color: transparent transparent transparent #fff;
+}
+#suntoryCommonHd_submenu #suntoryCommonHd_submenu_list1 li.suntoryCommonHd_submenu_sublist_opened span.arrow,
+#suntoryCommonHd_submenu #suntoryCommonHd_submenu_list1 li.suntoryCommonHd_submenu_sublist_opened:hover span.arrow{
+	border-color: transparent transparent transparent #fef501;
+}
+
+
+
+
+#suntoryCommonHd_submenu #suntoryCommonHd_submenu_list1 li.suntoryCommonHd_submenu_sublist_opened  ul.suntoryCommonHd_submenu_sublist li {
+	font-weight: normal;
+}
+
+#suntoryCommonHd_submenu #suntoryCommonHd_submenu_list1 li ul.suntoryCommonHd_submenu_sublist {
+	position: absolute;
+	top: 0;
+	left: 360px;
+	width: 560px;
+	display: none;
+}
+#suntoryCommonHd_submenu #suntoryCommonHd_submenu_list1 li ul.suntoryCommonHd_submenu_sublist li {
+	margin-bottom: 35px;
+	padding-bottom: 0;
+	width: 100%;
+}
+#suntoryCommonHd_submenu #suntoryCommonHd_submenu_list1 li ul.suntoryCommonHd_submenu_sublist li:first-child {
+	font-weight: bold;
+}
+#suntoryCommonHd_submenu #suntoryCommonHd_submenu_list1 li ul.suntoryCommonHd_submenu_sublist li a {
+	width: 100%;
+	font-size: 20px;
+	color:#f9f57c;
+}
+#suntoryCommonHd_submenu #suntoryCommonHd_submenu_list1 li ul.suntoryCommonHd_submenu_sublist li a span.small {
+	font-size: 70%;
+	color: #f9f57c;
+	letter-spacing: -0.7px;
+}
+#suntoryCommonHd_submenu #suntoryCommonHd_submenu_list1 li ul.suntoryCommonHd_submenu_sublist li.suntoryCommonHd_submenu_small a {
+	font-size: 15px;
+}
+
+/* link list - list2
+======================== */
+#suntoryCommonHd_submenu #suntoryCommonHd_submenu_list2_wrap {
+	width: 186px;
+	float: right;
+}
+#suntoryCommonHd_submenu #suntoryCommonHd_submenu_list2 ul li {
+	margin-bottom: 40px;
+}
+
+#suntoryCommonHd_submenu #suntoryCommonHd_submenu_list2 ul li a {
+	font-size: 15px;
+}
+#suntoryCommonHd_submenu #suntoryCommonHd_submenu_list2 ul li a:hover {
+	font-weight: bold;
+	cursor: pointer;
+}
+
+#suntoryCommonHd_submenu #suntoryCommonHd_submenu_list1 ul li.suntoryCommonHd_submenu_sbssupport a {
+	background: url(//www.suntory.co.jp/sun_common/sun_navi/responsive/img/submenu_other2.png) right top 2px no-repeat;
+    background-size: 9px auto;
+    padding-right: 13px;
+}
+
+#suntoryCommonHd_submenu #suntoryCommonHd_submenu_list2 ul li.suntoryCommonHd_submenu_sbssupport a {
+	background: url(//www.suntory.co.jp/sun_common/sun_navi/responsive/img/submenu_other.png) right top 2px no-repeat;
+    background-size: 9px auto;
+    padding-right: 13px;
+}
+
+#suntoryCommonHd_submenu #suntoryCommonHd_submenu_list_global a {
+	font-size: 15px;
+	float: left;
+    display: block;
+    line-height: 20px;
+    padding: 0 12px 0 24px;
+    background: url(//www.suntory.co.jp/sun_common/sun_navi/responsive/img/submenu_global.png) left top no-repeat,url(//www.suntory.co.jp/sun_common/sun_navi/responsive/img/submenu_other.png) right top 2px no-repeat;
+    background-size: auto 20px,9px auto;
+}
+#suntoryCommonHd_submenu #suntoryCommonHd_submenu_list_global a span {
+	color: #fff;
+    display: inline-block;
+    width: 50px;
+    text-align: center;
+}
+#suntoryCommonHd_submenu #suntoryCommonHd_submenu_list_global a:hover span {
+	font-weight: bold;
+	cursor: pointer;
+}
+
+/*#suntoryCommonHd_submenu  responsive
+======================================================================== */
+
+@media screen and (max-width:1440px) { #suntoryCommonHd_02_wrap { width: 100%; }}
+
+@media screen and (max-width:1164px) { 
+#suntoryCommonHd_submenu #suntoryCommonHd_submenu_list1 li {font-size: 22px;}
+#suntoryCommonHd_submenu #suntoryCommonHd_submenu_list1 li a { font-size: 22px;}
+#suntoryCommonHd_submenu #suntoryCommonHd_submenu_list1 li ul.suntoryCommonHd_submenu_sublist li a {font-size: 18px;padding-bottom: 30px;}	
+#suntoryCommonHd_submenu #suntoryCommonHd_submenu_list1 li ul.suntoryCommonHd_submenu_sublist li.suntoryCommonHd_submenu_small a {font-size: 13px;}
+#suntoryCommonHd_submenu #suntoryCommonHd_submenu_list2 ul li {margin-bottom: 35px;}
+#suntoryCommonHd_submenu #suntoryCommonHd_submenu_list2 ul li a {font-size: 14px;padding-bottom: 25px;}
+#suntoryCommonHd_submenu #suntoryCommonHd_submenu_list_global a {
+	font-size: 13px;
+    line-height: 18px;
+    padding: 0 11px 0 21px;
+    background: url(//www.suntory.co.jp/sun_common/sun_navi/responsive/img/submenu_global.png) left top no-repeat,url(//www.suntory.co.jp/sun_common/sun_navi/responsive/img/submenu_other.png) right center no-repeat;
+    background-size: auto 18px,8px auto;
+}
+#suntoryCommonHd_submenu #suntoryCommonHd_submenu_list_global a span {width: 44px;}
+}
+
+@media screen and (min-width:961px) and ( max-width:1164px) {
+#suntoryCommonHd_submenu #suntoryCommonHd_submenu_search{ width: calc( 100% - 544px ); }
+#suntoryCommonHd_submenu #suntoryCommonHd_submenu_search form input[type="submit"]{/*width:70px;font-size: 16px;*/}
+#suntoryCommonHd_submenu #suntoryCommonHd_submenu_search input[type="text"]{/*width: calc( 100% - 659px );*/ width: 43.38%;/*padding:0 0 0 45px;font-size:16px;*/}
+#suntoryCommonHd_submenu #suntoryCommonHd_submenu_list1 {width: 79%;}
+#suntoryCommonHd_submenu #suntoryCommonHd_submenu_list1 li {width: 280px;}
+#suntoryCommonHd_submenu #suntoryCommonHd_submenu_list1 li ul.suntoryCommonHd_submenu_sublist {left: 330px;width:calc( 100% - 330px );}
+#suntoryCommonHd_submenu #suntoryCommonHd_submenu_list2_wrap {width: 16%;}
+}
+@media screen and (max-width:960px) { 
+#suntoryCommonHd_02_wrap { width: 960px; }
+#suntoryCommonHd_submenu #suntoryCommonHd_submenu_search{width: 416px;}
+#suntoryCommonHd_submenu #suntoryCommonHd_submenu_search form input[type="submit"]{/*width:70px;font-size: 16px;*/}
+#suntoryCommonHd_submenu #suntoryCommonHd_submenu_search input[type="text"]{width: 301px;/*padding:0 0 0 45px;font-size:16px;*/}
+#suntoryCommonHd_submenu #suntoryCommonHd_submenu_list1 {width: 760px;}
+#suntoryCommonHd_submenu #suntoryCommonHd_submenu_list1 li {width:280px;}
+#suntoryCommonHd_submenu #suntoryCommonHd_submenu_list1 li ul.suntoryCommonHd_submenu_sublist {left: 330px;width:480px;}
+#suntoryCommonHd_submenu #suntoryCommonHd_submenu_list2_wrap {width: 154px;}
+}
+
+
+
+/* #suntoryCommonFooter_wrap
+======================================================================== */
+#suntoryCommonFt_wrap {
+	width: 100%;
+	padding: 70px 0 20px 0;
+	background-color: #f1f5f6;
+}
+
+/* #suntoryCommonFt_main
+======================================================================== */
+#suntoryCommonFt_main {
+	width: 1164px;
+	overflow: hidden;
+    color: #000;
+    font-weight: bold;
+	margin-bottom: 37px;
+	box-sizing: content-box;
+}
+
+/* #suntoryCommonFt_main_menu
+======================================================================== */
+#suntoryCommonFt_menu {
+	float: left;
+	width: 780px;
+	padding-left: 10px;
+	box-sizing: content-box;
+}
+#suntoryCommonFt_menu ul {
+	float: left;
+	width: 195px;
+}
+#suntoryCommonFt_menu ul li {
+	margin-bottom: 25px;
+}	
+#suntoryCommonFt_menu ul li a {
+	text-align: left;
+    font-size: 14px;
+    font-weight: bold;
+}
+#suntoryCommonFt .suntoryCommonFt_03_sbssupport a {
+	background: url(//www.suntory.co.jp/sun_common/sun_navi/responsive/img/other.png) right top 2px no-repeat;
+    background-size: 9px auto;
+    padding-right: 11px;
+}
+#suntoryCommonFt_menu ul li a:hover {
+	color: #007694;
+	text-decoration: underline;
+	text-decoration-color: #007694; 
+}
+
+
+/* #suntoryCommonFt_main_information
+======================================================================== */
+#suntoryCommonFt_information {
+	float: right;
+	width: 347px;
+	margin: 16px 0 0 0;
+	padding-right: 7px;
+}
+
+#suntoryCommonFt_information #suntoryCommonFt_info_catch {
+	width: 100%;
+	height: 40px;
+	line-height: 40px;
+	font-size: 16px;
+	color: #fff;
+	font-weight: bold;
+	background-color: #007694;
+	border-radius: 8px;
+	text-align: center;
+	margin-bottom: 25px;
+	position: relative;
+}
+#suntoryCommonFt_information #suntoryCommonFt_info_catch:before {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 3%;
+  border: 7px solid transparent;
+  border-top: 7px solid #007694;
+}
+
+#suntoryCommonFt_information dl {
+}
+#suntoryCommonFt_information dl span {
+	display: block;
+	margin-bottom: 20px;
+	height: 32px;
+	line-height: 32px;
+}
+#suntoryCommonFt_information dl span.suntoryCommonFt_info_nomargin {
+	margin-bottom: 0;
+}
+#suntoryCommonFt_information dl dt {
+	font-size: 14px;
+	font-weight: bold;
+	display: inline-block;
+	height: 32px;
+	line-height: 32px;
+}
+#suntoryCommonFt_information dl dd {
+	display: inline-block;
+	height: 32px;
+	line-height: 32px;
+}
+#suntoryCommonFt_information dl dd ul {
+	display: inline-block;
+}
+#suntoryCommonFt_information dl dd ul li {
+	display: inline-block;
+}
+#suntoryCommonFt_information #suntoryCommonFt_info_suntory-id-mypage,
+#suntoryCommonFt_information #suntoryCommonFt_info_suntory-id-signin {
+	margin-left: 10px;
+}
+#suntoryCommonFt_information #suntoryCommonFt_info_suntory-id-mypage a, 
+#suntoryCommonFt_information #suntoryCommonFt_info_suntory-id-signin a {
+	display: block;
+	height: 32px;
+	line-height: 32px;
+	padding: 0 25px 0 13px;
+	font-size: 14px;
+	color: #fff;
+	font-weight: bold;
+	background-color: #0f96b8;
+	border: 1px solid #fff;
+	border-radius: 15px;
+}
+#suntoryCommonFt_information #suntoryCommonFt_info_suntory-id-mypage a {
+	color: #fff;
+	background-color: #0f96b8;
+	position: relative;
+}
+#suntoryCommonFt_information #suntoryCommonFt_info_suntory-id-mypage a:hover {
+	background-color: #007694;
+}
+#suntoryCommonFt_information #suntoryCommonFt_info_suntory-id-mypage a:after {
+	content: "";
+    vertical-align: middle;
+    position: absolute;
+    top: 11px;
+    right: 11px;
+    width: .45em;
+    height: .45em;
+    margin: auto;
+    border-top: 2px solid #fff;
+    border-right: 2px solid #fff;
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+#suntoryCommonFt_information #suntoryCommonFt_info_suntory-id-signin a {
+	color: #000;
+	background-color: #fef501;
+	position: relative;
+}
+#suntoryCommonFt_information #suntoryCommonFt_info_suntory-id-signin a:hover {
+	background-color: #fdeb00;
+}
+
+#suntoryCommonFt_information #suntoryCommonFt_info_suntory-id-signin a:after {
+	content: "";
+    vertical-align: middle;
+    position: absolute;
+    top: 11px;
+    right: 11px;
+    width: .45em;
+    height: .45em;
+    margin: auto;
+    border-top: 2px solid #000;
+    border-right: 2px solid #000;
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+
+
+
+#suntoryCommonFt_information #suntoryCommonFt_info_mail-magazine,
+#suntoryCommonFt_information #suntoryCommonFt_info_official-account {
+	margin-left: 10px;
+}
+#suntoryCommonFt_information #suntoryCommonFt_info_mail-magazine a,
+#suntoryCommonFt_information #suntoryCommonFt_info_official-account a {
+	padding-right: 14px;
+	font-size: 14px;
+	font-weight: normal;
+	position: relative;
+}
+
+#suntoryCommonFt_information #suntoryCommonFt_info_mail-magazine a:hover,
+#suntoryCommonFt_information #suntoryCommonFt_info_official-account a:hover {
+	color: #007694;
+	text-decoration: underline;
+	text-decoration-color: #007694; 
+}
+
+#suntoryCommonFt_information #suntoryCommonFt_info_mail-magazine a:after,
+#suntoryCommonFt_information #suntoryCommonFt_info_official-account a:after {
+	content: "";
+    vertical-align: middle;
+    position: absolute;
+	bottom: .65em;
+    right: -.5em;
+    width: .4em;
+    height: .4em;
+    margin: auto;
+    border-top: 2px solid #0f96b8;
+    border-right: 2px solid #0f96b8;
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+#suntoryCommonFt_information #suntoryCommonFt_info_mail-magazine a:hover:after,
+#suntoryCommonFt_information #suntoryCommonFt_info_official-account a:hover:after {
+    border-top: 2px solid #007694;
+    border-right: 2px solid #007694;
+}
+
+#suntoryCommonFt_information #suntoryCommonFt_info_official-account_list {
+	height: 32px;
+	margin-top: 5px;
+}
+#suntoryCommonFt_information #suntoryCommonFt_info_official-account_list ul {
+	display: block;
+}
+#suntoryCommonFt_information #suntoryCommonFt_info_official-account_list ul li {
+	margin-right: 20px;
+}
+#suntoryCommonFt_information #suntoryCommonFt_info_official-account_list ul li a {
+	display: block;
+	height: 32px;
+	text-indent: -9999px;
+}
+#suntoryCommonFt_information #suntoryCommonFt_info_official-account_list ul li a:hover {
+	opacity: 0.7;
+}
+#suntoryCommonFt_info_official-account_facebook a {
+	width: 33px;
+	background: url(//www.suntory.co.jp/sun_common/sun_navi/responsive/img/facebook.png) left center no-repeat;
+	background-size: auto 32px;
+}
+#suntoryCommonFt_info_official-account_twitter a {
+	width: 31px;
+	background: url(//www.suntory.co.jp/sun_common/sun_navi/responsive/img/twitter.png) left center no-repeat;
+	background-size: auto 32px;
+}
+#suntoryCommonFt_info_official-account_instagram a {
+	width: 32px;
+	background: url(//www.suntory.co.jp/sun_common/sun_navi/responsive/img/instagram.png) left center no-repeat;
+	background-size: auto 32px;
+}
+#suntoryCommonFt_info_official-account_line a {
+	width: 32px;
+	background: url(//www.suntory.co.jp/sun_common/sun_navi/responsive/img/line.png) left center no-repeat;
+	background-size: auto 32px;
+}
+#suntoryCommonFt_info_official-account_youtube a {
+	width: 34px;
+    background: url(//www.suntory.co.jp/sun_common/sun_navi/responsive/img/youtube.png) left center no-repeat;
+    background-size: 34px auto;
+}
+
+
+/* #suntoryCommonFt_main responsive
+======================================================================== */
+@media screen and (min-width:961px) and ( max-width:1164px) {
+#suntoryCommonFt_main { width: 100%; }
+#suntoryCommonFt_information { width: 313px; }	
+#suntoryCommonFt_menu { width: calc( 100% - 348px );}
+#suntoryCommonFt_menu ul { width: calc( 100% / 4 ); }
+#suntoryCommonFt_information #suntoryCommonFt_info_suntory-id-mypage,
+#suntoryCommonFt_information #suntoryCommonFt_info_suntory-id-signin {
+	margin-left: 0;
+}
+}
+
+@media screen and (max-width:960px) {
+#suntoryCommonFt_wrap { width: 960px; }
+#suntoryCommonFt_main { width: 960px; }
+#suntoryCommonFt_information { width: 310px; }	
+#suntoryCommonFt_menu { width: 632px;}
+#suntoryCommonFt_menu ul { width: 158px; }
+#suntoryCommonFt_menu ul li {margin-right: 10px;}
+#suntoryCommonFt_information #suntoryCommonFt_info_suntory-id-mypage,
+#suntoryCommonFt_information #suntoryCommonFt_info_suntory-id-signin {
+	margin-left: 0;
+}
+}
+
+
+
+
+/* #suntoryCommonFt_end1
+======================================================================== */
+#suntoryCommonFt_end1 {
+	width: calc( 100% - 17px);
+	padding: 0 7px 24px 10px;	
+	border-bottom: 1px solid #d1dee1;
+	overflow: hidden;
+	font-size: 11px;
+	box-sizing: content-box;
+}
+#suntoryCommonFt_end1 #suntoryCommonFt_notice {
+	float: left;
+    height: 54px;
+    padding-left: 102px;
+    background: url(//www.suntory.co.jp/sun_common/sun_navi/responsive/img/stop20.svg) left center no-repeat,url(//www.suntory.co.jp/sun_common/sun_navi/responsive/img/recycle.svg) left 41px center no-repeat;
+    background-size: 37px 54px,auto 54px;
+    display: table;
+}
+#suntoryCommonFt_end1 #suntoryCommonFt_notice.softdrink {
+	float: left;
+    height: 55px;
+	padding-left: 65px;
+	background: url(//www.suntory.co.jp/sun_common/sun_navi/responsive/img/recycle.svg) left center no-repeat;
+	background-size: auto 55px;
+	display: table;
+}
+
+#suntoryCommonFt_end1 #suntoryCommonFt_notice span {
+	display: table-cell;
+    vertical-align: middle;
+    line-height: 160%;
+    font-size: 12px;
+}
+
+#suntoryCommonFt_end1 #suntoryCommonFt_drink_smart {
+	display: none;
+	float: left;
+    margin-left: 30px;
+    width: 140px;
+}
+
+#suntoryCommonFt_end1 #suntoryCommonFt_drink_smart a {
+	font-size: 12px;
+	padding-bottom: 5px;
+	width: 140px;
+	display: block;
+}
+#suntoryCommonFt_end1 #suntoryCommonFt_drink_smart a:after {
+	display:block;
+	content:"";
+	position:relative;
+	top:5px;
+	width:140px;
+	height:45px;
+	background: url(//www.suntory.co.jp/sun_common/sun_navi/responsive/img/drink_smart.svg) left bottom no-repeat #fff;
+	background-size: auto 45px;
+}
+#suntoryCommonFt_end1 #suntoryCommonFt_drink_smart a:hover {
+	color: #007694;
+	text-decoration: underline;
+	text-decoration-color: #007694; 
+}
+
+#suntoryCommonFt_end1 #suntoryCommonFt_logo {
+	float: right;
+}
+#suntoryCommonFt_end1 #suntoryCommonFt_logo a {
+	display: block;
+	width: 210px;
+	height: 17px;
+	text-indent: -9999px;
+	margin-top: 38px;
+	background: url(//www.suntory.co.jp/sun_common/sun_navi/responsive/img/footer_logo.png) right bottom no-repeat;
+	background-size: 100% auto;	
+}
+
+
+/* #suntoryCommonFt_end2
+======================================================================== */
+#suntoryCommonFt_end2 {
+    width: calc( 100% - 17px );
+    height: 20px;
+	padding: 15px 7px 0 10px;
+	box-sizing: content-box;
+}
+#suntoryCommonFt_end2 #suntoryCommonFt_end2_right {
+	float: right;
+	font-size: 13px;
+	overflow: hidden;
+}
+
+#suntoryCommonFt_end2 #suntoryCommonFt_end2_right #suntoryCommonFt_txt_link {
+	float: left;
+	overflow: hidden;	
+}
+#suntoryCommonFt_end2 #suntoryCommonFt_end2_right #suntoryCommonFt_txt_link li {
+	float: left;
+}
+#suntoryCommonFt_end2 #suntoryCommonFt_end2_right #suntoryCommonFt_txt_link li a {
+	float: left;
+	line-height: 20px;
+	margin: 0 10px;
+	font-size: 14px;
+}
+#suntoryCommonFt_end2 #suntoryCommonFt_end2_right #suntoryCommonFt_txt_link li a:hover {
+	color: #007694;
+	text-decoration: underline;
+	text-decoration-color: #007694; 
+}
+#suntoryCommonFt_end2 #suntoryCommonFt_end2_right #suntoryCommonFt_txt_link li:first-child  a{
+	margin-left: 0;
+}
+#suntoryCommonFt_end2 #suntoryCommonFt_end2_right #suntoryCommonFt_txt_link li:last-child a {
+	margin-right: 0;
+}
+#suntoryCommonFt_end2 #suntoryCommonFt_end2_right #suntoryCommonFt_txt_link li:after {
+	content: "|";
+	line-height: 20px;
+	display: inline;
+}
+#suntoryCommonFt_end2 #suntoryCommonFt_end2_right #suntoryCommonFt_txt_link li:last-child:after {
+	content: "";
+}
+
+
+#suntoryCommonFt_end2 #suntoryCommonFt_end2_right #suntoryCommonFt_global {
+	float: left;
+	margin-left: 33px;
+}
+#suntoryCommonFt_end2 #suntoryCommonFt_end2_right #suntoryCommonFt_global a {
+	float: left;
+	display: block;
+	line-height: 20px;
+	font-size: 14px;
+	font-weight: bold;
+	padding: 0 13px 0 25px;
+	background: url(//www.suntory.co.jp/sun_common/sun_navi/responsive/img/global.png) left top no-repeat,url(//www.suntory.co.jp/sun_common/sun_navi/responsive/img/other.png) right top 2px no-repeat;
+	background-size: auto 20px,10px auto;
+}
+#suntoryCommonFt_end2 #suntoryCommonFt_end2_right #suntoryCommonFt_global a:hover span {
+	color: #007694;
+	text-decoration: underline;
+	text-decoration-color: #007694; 
+}
+
+
+#suntoryCommonFt_end2 #suntoryCommonFt_copy {
+	float: left;
+	font-size: 12px;
+	line-height: 23px;
+}
+
+@media screen and (max-width:1000px) { 
+#suntoryCommonFt_end2 #suntoryCommonFt_end2_right #suntoryCommonFt_txt_link li a {margin: 0 5px;font-size: 13px;}
+#suntoryCommonFt_end2 #suntoryCommonFt_end2_right #suntoryCommonFt_global {margin-left: 20px;}
+}

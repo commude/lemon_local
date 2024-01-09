@@ -1,0 +1,119 @@
+@charset "utf-8";
+/*管理-レポートCSVダウンロード：レイアウト*/
+body {
+    font-size: 1rem;
+    margin: 0 auto;
+    min-height: 100vh;
+    display: grid;
+    grid-template:
+        "... ...... ...... ..." 0px
+        "... left   search ..." 60px
+        "... left   ...... ..."
+        "... left   main   ..." 2fr
+        "... left   ...... ..." 0px
+        "... left   list   ..."
+        "... ...... ...... ..." 0px
+        / auto 240px minmax(760px, 100%) auto;
+}
+/*管理-レポートCSVダウンロード：左側メニュー*/
+left {
+    grid-area: left;
+    background-color: #171A23;
+    line-height: 0px;
+	flex: 1;
+}
+left ul {
+	list-style: none;
+	margin: 0px;
+	padding: 0px;
+}
+/*管理-レポートCSVダウンロード：右側上ページタイトル*/
+search {
+    grid-area: search;
+}
+/*入力欄*/
+.lable_input input:focus {
+	outline: none;
+	box-shadow: inset 1px 1px 2px 0 #c9c9c9;
+}
+lable input {
+	box-sizing: border-box;
+	width: auto;
+	padding: 0.3em;
+	transition: 0.3s;
+	letter-spacing: 1px;
+	color: #aaaaaa;
+	border: 1px solid #ffffff;
+	box-shadow: 1px 1px 2px 0 #707070 inset;
+	border-radius: 4px;
+	background-color: #F6F6F7;
+}
+input[type="text"] {
+	width: 108px;
+	height: 40px;
+}
+lable input.err{
+	border: 1px solid red;
+}
+
+/*テキスト*/
+.title_search_01 {
+	color: #6d6d6d;
+	font-size: small;
+	margin-top: 20px;
+	margin-left: 20px;
+	margin-right: 10px;
+	margin-bottom: 20px;
+}
+.title_search_err {
+	color: red;
+	font-size: x-small;
+	text-align: center;
+ 	margin-top: 0px;
+	margin-left: 85px;
+	margin-bottom: 20px;
+}
+.user_tilde {
+	color: #6d6d6d;
+	margin-left: 5px;
+	margin-right: 5px;
+}
+/*管理-レポートCSVダウンロード：メインコンテンツ*/
+main {
+    grid-area: main;
+	box-shadow: inset 0 3px 3px -1px rgba(212,214,216,1);
+    background-color: #F6F8F9;
+}
+.box_status_dl_main {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	border: 2px solid #E4E8EA;
+	background-color: #ffffff;
+	border-radius: 4px;
+	margin: 30px 20px 20px 20px;
+}
+.box_main_input {
+	display: -webkit-inline-flex;
+	display: -ms-inline-flexbox;
+	display: inline-flex;
+	-webkit-flex-wrap: nowrap;
+	-ms-flex-wrap: nowrap;
+	flex-wrap: nowrap;
+	-webkit-justify-content: center;
+	-ms-flex-pack: center;
+	justify-content: center;
+	-webkit-align-items: center;
+	-ms-flex-align: center;
+	align-items: center;
+	margin-top: 20px;
+}
+.box_main_btn {
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+	align-items: center;
+	margin-top: 10px;
+	margin-left: 40px;
+	margin-bottom: 20px;
+}
